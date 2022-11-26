@@ -55,8 +55,8 @@ function PHT.LoadPresets()
 
 	-- Load all files in data/phonemetool
 	local files = file.Find("phonemetool/*.txt", "DATA");
-	for _, file in pairs(files) do
-		local jdata = file.Read(file, "DATA");
+	for _, fileVar in pairs(files) do
+		local jdata = file.Read("phonemetool/" .. fileVar, "DATA");
 		local data = util.JSONToTable(jdata);
 		if data then
 			PHT.AddPresetGroups(data);
